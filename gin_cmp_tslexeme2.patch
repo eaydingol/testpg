@@ -1,0 +1,19 @@
+diff --git a/src/backend/utils/adt/tsginidx.c b/src/backend/utils/adt/tsginidx.c
+index 0d9b0d5901..9a0e66392c 100644
+--- a/src/backend/utils/adt/tsginidx.c
++++ b/src/backend/utils/adt/tsginidx.c
+@@ -27,9 +27,11 @@ gin_cmp_tslexeme(PG_FUNCTION_ARGS)
+ 	text	   *b = PG_GETARG_TEXT_PP(1);
+ 	int			cmp;
+ 
+-	cmp = tsCompareString(VARDATA_ANY(a), VARSIZE_ANY_EXHDR(a),
+-						  VARDATA_ANY(b), VARSIZE_ANY_EXHDR(b),
+-						  false);
++	char* a_cstr = text_to_cstring(a);
++	char* b_cstr = text_to_cstring(b);
++	cmp = tsCompareString(a_cstr, strlen(a_cstr),
++						  b_cstr, strlen(b_cstr),
++						  false);	
+ 
+ 	PG_FREE_IF_COPY(a, 0);
+ 	PG_FREE_IF_COPY(b, 1);
