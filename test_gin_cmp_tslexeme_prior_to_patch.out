@@ -1,0 +1,41 @@
+DROP TABLE
+CREATE TABLE
+INSERT 0 1
+DROP TABLE
+CREATE TABLE
+INSERT 0 12
+ left_cmp | right_cmp | cmp_res 
+----------+-----------+---------
+ {MI      | <4        |      63
+ R        | <4        |      22
+ Y^.E     | <4        |      29
+ :A       | <4        |      -2
+ -t       | <4        | -966592
+ M>       | <4        |      17
+ =        | <4        |       1
+ ]        | <4        |      33
+ =857N    | <4        |   66564
+          | <4        |        
+ +        | <4        |     -17
+ &HAo     | <4        |     -22
+(12 rows)
+
+DROP TABLE
+CREATE TABLE
+DO
+ left_cmp | right_cmp | cmp_res 
+----------+-----------+---------
+ {MI      | <4        |      63
+ R        | <4        |      22
+ Y^.E     | <4        |      29
+ :A       | <4        |      -2
+ -t       | <4        |     -15
+ M>       | <4        |      17
+ =        | <4        |       1
+ ]        | <4        |      33
+ =857N    | <4        |       1
+          | <4        |        
+ +        | <4        |     -17
+ &HAo     | <4        |     -22
+(12 rows)
+
